@@ -1,7 +1,7 @@
 				<div class="sidebar-container" role="complementary">
                     <a title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>">
                         <div class="circle hide-mobile">
-                            <img class="mathorient-logo" src="<?php echo get_template_directory_uri(); ?>/images/logo2014.png">
+                            <img class="mathorient-logo" src="<?php echo get_template_directory_uri(); ?>/images/logo2014pinkmini.png">
                         </div>
                     </a>
 
