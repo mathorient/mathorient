@@ -70,18 +70,17 @@ function lookupAllLeaders()
 function lookupLeaderShift($username)
 {
     global $wpdb;
-    $shift_relation = $wpdb->prefix . "_shift_relation";
-    $shift_header = $wpdb->prefix . "_shift_header";
+    $shift_relation = $wpdb->prefix . "shift_relation";
+    $shift_header = $wpdb->prefix . "shift_header";
 
     $info = $wpdb->get_results(
         $wpdb->prepare(
             "
-            SELECT DISTINCT userid, day, event_name, shift_name, start_time, end_time
+            SELECT DISTINCT userid, date, time, event, place
             FROM `$shift_relation`
             INNER JOIN `$shift_header`
             ON `$shift_relation`.shift_id = `$shift_header`.shift_id
             WHERE userid = %s
-            ORDER BY date, start_time
             ",
             $username
         ), ARRAY_A

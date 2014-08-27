@@ -14,7 +14,7 @@ get_header();
 if ($leader_shifts == null){
 ?>
 
-Oh no your shifts are broken.  Contact FOC, that'll tell the website team to get back to work.
+    Oh no <?php echo $username ?>'s shifts are broken.  Contact FOC, that'll tell the website team to get back to work.
 <?php
 } else { # Authenticated
 ?>
@@ -27,21 +27,19 @@ Oh no your shifts are broken.  Contact FOC, that'll tell the website team to get
   <?php endwhile; // end of the loop. ?>
 </div>
 <table class='shift-lookup'>
-<tr><th>Day</th>
-    <th>Start Time</th>
-    <th>End Time</th>
-    <th>Event Name</th>
-    <th>Shift Name</th>
+<tr><th>Date</th>
+    <th>Time</th>
+    <th>Event</th>
+    <th>Place</th>
 </tr>
 <?php
     foreach( $leader_shifts as $shift ){
 ?>
   <tr> 
-      <td><?php echo $shift['day'] ?></td>
-      <td><?php echo $shift['start_time'] ?></td>
-      <td><?php echo $shift['end_time'] ?></td>
-      <td><?php echo $shift['event_name'] ?></td>
-      <td><?php echo $shift['shift_name'] ?></td>
+      <td><?php echo $shift['date'] ?></td>
+      <td><?php echo $shift['time'] ?></td>
+      <td><?php echo $shift['event'] ?></td>
+      <td><?php echo $shift['place'] ?></td>
   </tr>
 <?php
     }
